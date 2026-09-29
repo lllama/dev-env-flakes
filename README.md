@@ -48,3 +48,9 @@ The `go` starter uses `go_1_27` (not the `go` attr): nixpkgs keeps the default
 `go` attribute one release behind during a branch's lifetime (26.05 ships
 `go` 1.26.7 but `go_1_27` 1.27.1). The attr stays within the same locked
 input — bump it when a new Go line becomes the branch default.
+
+## Python version note
+
+Same promotion lag as Go: the `python` starter uses `python314` (not `python3`):
+26.05's default `python3` is still 3.13; `python314` is 3.14.x. Bump when the
+branch default moves.

@@ -8,7 +8,7 @@
     in {
       packages.${system}.default = pkgs.buildEnv {
         name = "dev-env-python";
-        paths = with pkgs; [ python3 uv git curl jq ripgrep fd vim jujutsu ];
+        paths = with pkgs; [ python314 uv git curl jq ripgrep fd vim jujutsu ];
       };
     };
 }
