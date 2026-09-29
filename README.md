@@ -28,7 +28,7 @@ dev-env create mybox --env go
 ```
 
 The flake is fetched **inside** the container at create; the committed
-`flake.lock` pins nixpkgs (`nixos-25.05`), so creates are reproducible until
+`flake.lock` pins nixpkgs (`nixos-26.05`), so creates are reproducible until
 the lock is bumped.
 
 ## Evolving
@@ -41,3 +41,10 @@ Existing containers are untouched — dev-env v1 re-applies only at create
 
 Starters are meant to be forked: copy the directory, edit `paths`, point your
 own config at it.
+
+## Go version note
+
+The `go` starter uses `go_1_27` (not the `go` attr): nixpkgs keeps the default
+`go` attribute one release behind during a branch's lifetime (26.05 ships
+`go` 1.26.7 but `go_1_27` 1.27.1). The attr stays within the same locked
+input — bump it when a new Go line becomes the branch default.
